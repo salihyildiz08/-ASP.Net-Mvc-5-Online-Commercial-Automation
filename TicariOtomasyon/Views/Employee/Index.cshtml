@@ -1,0 +1,48 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Employee Name</th>
+        <th>Employee Surname</th>
+        <th>Image</th>
+        <th>Department</th>
+        <th>Update</th>
+        <th>Detail</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+
+        <tr>
+            <td>
+                @c.EmployeeId
+            </td>
+            <td>
+                @c.EmployeeName
+            </td>
+            <td>
+                @c.EmployeeSurname
+            </td>
+            <td>
+                <img src="@c.EmployeeImage" style="width:100px; height:60px"/>
+            </td>
+            <td>
+                @c.Department.DepartmentName
+            </td>
+           
+            <td><a href="/Employee/EmployeeBring/@c.EmployeeId" class="btn btn-success">Update</a></td>
+            <td>
+                <a href="/Department/DepartmentEmployeeSales/@c.EmployeeId" class="btn btn-default"
+                   style="background-color:fuchsia">Detail</a>
+            </td>
+        </tr>
+
+    }
+</table>
+<a href="/Employee/EmployeeInsert" class="btn btn-info">Employee Insert</a>
+

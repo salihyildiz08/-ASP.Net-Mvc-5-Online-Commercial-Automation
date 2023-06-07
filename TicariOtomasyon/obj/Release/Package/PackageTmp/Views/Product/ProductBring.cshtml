@@ -1,0 +1,42 @@
+﻿@model TicariOtomasyon.Models.Class.Product
+@{
+    ViewBag.Title = "ProductBring";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<br />
+<h2>Product Update</h2>
+<br />
+@using (Html.BeginForm("ProductBring", "Product", FormMethod.Post)) 
+{
+    @Html.HiddenFor(x=>x.ProductID)
+@Html.LabelFor(x => x.ProductNAme)
+@Html.TextBoxFor(x => x.ProductNAme, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Brand)
+@Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Stock)
+@Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Purchaseprice)
+@Html.TextBoxFor(x => x.Purchaseprice, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Saleprice)
+@Html.TextBoxFor(x => x.Saleprice, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Situation)
+@Html.TextBoxFor(x => x.Situation, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.ProductImage)
+@Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Category.CategoryID)
+@Html.DropDownListFor(x => x.Categoryiid, (List<SelectListItem>)ViewBag.vlu1, new { @class ="form-control" })
+@*@Html.TextBoxFor(x => x.Categoryiid, new { @class = "form-control" })*@
+<br />
+<button class="btn btn-warning">Update</button>
+<br />
+
+}
+
+

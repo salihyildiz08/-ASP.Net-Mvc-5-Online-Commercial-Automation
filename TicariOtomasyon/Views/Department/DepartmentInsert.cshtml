@@ -1,0 +1,15 @@
+﻿@model TicariOtomasyon.Models.Class.Department
+@{
+    ViewBag.Title = "DepartmentInsert";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<br />
+<h2>DepartmentInsert</h2>
+<br />
+<form class="form-group"method="post">
+    @Html.LabelFor(x=>x.DepartmentName)
+    @Html.TextBoxFor(x=>x.DepartmentName,new {@class="form-control"})
+    <br />
+    <button class="btn btn-info">Department Insert</button>
+</form>
+

@@ -1,0 +1,39 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<SalesAction>
+@{
+    ViewBag.Title = "CurrentDetail";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<h2>Current Detail</h2>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> Current Name:  @ViewBag.curr </li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Sales Id</th>
+        <th>Product</th>
+        <th>Employee</th>
+        <th>Price</th>
+        <th>Piece</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Print</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SalesActionId</td>
+            <td>@x.Product.ProductID</td>
+            <td>@x.Employee.EmployeeName @x.Employee.EmployeeSurname</td>
+            <td>@x.Price</td>
+            <td>@x.Piece</td>
+            <td>@x.TotalAmount</td>
+            <td>@x.Date_</td>
+            <td><a href="#" class="btn btn-default" style="background-color:burlywood">Print</a></td>
+        </tr>
+    }
+
+</table>
+

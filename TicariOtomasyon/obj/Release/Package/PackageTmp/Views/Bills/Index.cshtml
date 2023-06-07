@@ -1,0 +1,83 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Bills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>BillsId</th>
+        <th>BillsIdSerialNumber</th>
+        <th>BillsIdDeskNumber</th>
+        <th>Date_</th>
+       
+       
+        <th>TotalAmount</th>
+        <th>DeliveryArea</th>
+        <th>Submitter</th>
+        <th>Update</th>
+        <th>Delivery Detail</th>   
+        
+        <th>New Item</th>   
+    </tr>
+    @foreach (var c in Model)
+    {
+
+        <tr>
+            
+            <td>@c.BillsId</td>
+            
+            <td>@c.BillsIdSerialNumber</td>
+            <td>@c.BillsIdDeskNumber</td>
+            <td>@c.Date_</td>
+            
+            
+            <td>@c.TotalAmount</td>
+            <td>@c.DeliveryArea</td>
+            <td>@c.Submitter</td>
+            <td><a href="/Bills/BillsBring/@c.BillsId" class="btn btn-success">Update</a></td>
+            <td><a href="/Bills/BillsDetail/@c.BillsId" class="btn btn-success">Detail</a></td>
+           
+            <td><a href="/Bills/BillsDetail/@c.BillsId" class="btn btn-success">Item</a></td>
+            
+        </tr>
+
+    }
+</table>
+<a href="/Bills/BillsInsert" class="btn btn-info">New Bill Insert</a>
+<br />
+<br />
+<button type="button" class="btn btn-warning" style="background-color:#d95151; color:white" data-toggle="modal" data-
+        target="#Modal1"> Popup Windown</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Popup Dialog screen</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered" >
+                    <tr>
+                        <td>BillsIdSerialNumber</td>
+                        <td>BillsIdDeskNumber</td>
+                        <td>TotalAmount</td>
+                    </tr>
+                    @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.BillsIdSerialNumber</td>
+                    <td>@x.BillsIdDeskNumber</td>
+                    <td>@x.TotalAmount</td>
+                </tr>
+            }
+
+                </table>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Okey</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

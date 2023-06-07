@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<br />
+<div>
+    @using (Html.BeginForm("Index", "QR", FormMethod.Post))
+    {
+        <input type="text" name="Code"/>
+        <input type="submit" name="QR Create"/>
+    }
+    <br />
+    @if(ViewBag.qrcodeimage !=null)
+            {
+                <img src="@ViewBag.qrcodeimage" alt=""  style="width:400px;height:400px" />
+            }
+    </div>

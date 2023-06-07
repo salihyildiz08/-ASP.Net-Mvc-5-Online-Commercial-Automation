@@ -1,0 +1,20 @@
+﻿@model TicariOtomasyon.Models.Class.Department
+@{
+    ViewBag.Title = "DepartmentBring";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<br />
+<h2>Department Update</h2>
+<br />
+@using (Html.BeginForm("DepartmentUpdate", "Department", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.DepartmentId)
+        @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.DepartmentId)
+    </div>
+
+    <button class=" btn btn-warning">Update</button>
+}
+

@@ -1,0 +1,32 @@
+﻿@model TicariOtomasyon.Models.Class.Current
+@{
+    ViewBag.Title = "CurrentUpdate";
+    Layout = "~/Views/Shared/View1.cshtml";
+
+}
+
+<h2>Current Update</h2>
+@using (Html.BeginForm("CurrentUpdatee","Current", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.CurrentId)
+    @Html.LabelFor(x => x.CurrentName)
+    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CurrentSurname)
+    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.City)
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.CurrentMail)
+    @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+    <button class=" btn btn-default">Update</button>
+
+
+</div>
+
+}
+

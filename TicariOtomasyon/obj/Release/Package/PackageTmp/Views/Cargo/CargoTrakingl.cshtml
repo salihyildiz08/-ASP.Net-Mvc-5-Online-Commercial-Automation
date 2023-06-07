@@ -1,0 +1,24 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<CargoTracking>
+@{
+    ViewBag.Title = "CargoTrakingl";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<br />
+
+
+<table class="table table-striped">
+    <tr>
+        <th>Explanation</th>
+        <th>Date</th>
+       
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.explanation_</td>
+            <td>@x.date_</td>
+          
+        </tr>
+    }
+</table>

@@ -1,0 +1,34 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "BillsDetail";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<h2>Bills Item Page</h2>
+<br />
+
+<table class="table table-condensed">
+    <tr>
+        <th>Sales Id</th>
+        <th>Explanation</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Price</th>
+        
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.InvoiceItemId</td>
+            <td>@x.Explanation</td>
+            <td>@x.Quantity</td>
+            <td>@x.UnitPrice</td>
+            <td>@x.Amount</td>
+          
+        </tr>
+    }
+
+</table>
+<a href="/Bills/NewItem"class="btn btn-default" style="background-color:darkblue">New Item Input</a>
+

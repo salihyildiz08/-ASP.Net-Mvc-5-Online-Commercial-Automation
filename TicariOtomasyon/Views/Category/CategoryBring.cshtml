@@ -1,0 +1,18 @@
+﻿@model TicariOtomasyon.Models.Class.Category 
+@{
+    ViewBag.Title = "CategoryBring";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<br />
+<h2>Category Update</h2>
+<br />
+@using (Html.BeginForm("CategoryUpdate","Category",FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(x=>x.CategoryNAme)
+                    @Html.TextBoxFor(x=>x.CategoryNAme,new { @class="form-control"})
+                    @Html.HiddenFor(x=> x.CategoryID)
+                </div>
+                
+                <button class=" btn btn-warning">Update</button>
+            }

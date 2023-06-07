@@ -1,0 +1,34 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Department Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Detail</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+
+        <tr>
+            <td>
+                @c.DepartmentId
+            </td>
+            <td>
+                @c.DepartmentName
+            </td>
+            <td><a href="/Department/DepartmentDelete/@c.DepartmentId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Department/DepartmentBring/@c.DepartmentId" class="btn btn-success">Update</a></td>
+            <td><a href="/Department/DepartmentDetail/@c.DepartmentId" class="btn btn-default" 
+                   style="background-color:fuchsia">Detail</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Department/DepartmentInsert" class="btn btn-info">Department Insert</a>
+

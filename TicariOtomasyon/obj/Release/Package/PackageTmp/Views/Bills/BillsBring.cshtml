@@ -1,0 +1,37 @@
+﻿@model TicariOtomasyon.Models.Class.Bills 
+@{
+    ViewBag.Title = "BillsBring";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<br />
+<h2>Bills  Update page</h2>
+<br />
+@using (Html.BeginForm("BillsUpdate", "Bills", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.BillsId)
+    @Html.LabelFor(x => x.BillsIdSerialNumber)
+    @Html.TextBoxFor(x => x.BillsIdSerialNumber, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BillsIdDeskNumber)
+    @Html.TextBoxFor(x => x.BillsIdDeskNumber, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TaxAdministration)
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date_)
+    @Html.TextBoxFor(x => x.Date_, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Hour)
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DeliveryArea)
+    @Html.TextBoxFor(x => x.DeliveryArea, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Submitter)
+    @Html.TextBoxFor(x => x.Submitter, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Update</button>
+    <br />
+}
+

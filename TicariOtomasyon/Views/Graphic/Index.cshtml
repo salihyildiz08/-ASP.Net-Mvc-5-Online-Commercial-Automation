@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+@{ 
+    var graphic = new Chart(width: 500, height: 500);
+    graphic.AddTitle(text: "Category and Piece");
+    graphic.AddLegend(title: "Value");
+    graphic.AddSeries(
+        name: "datas",
+        chartType:"Bar",
+        xValue: new[] { "household appliances", "television", "computer", "small appliances" },
+        yValues: new[] { 500, 250,340,620 }
+
+        ) ;
+
+    graphic.Write();
+}
+

@@ -1,0 +1,27 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<SalesAction>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<h2>Orders Past</h2>
+<br />
+<taable>
+    <tr>
+        <th>Product Name</th>
+        <th>Piace</th>
+        <th>Date</th>
+    </tr>    
+   
+        @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.Product.ProductNAme</td>
+                    <td>@x.Product.Purchaseprice</td>
+                    <td>@Convert.ToDateTime(x.Date_).ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+
+</taable>
+

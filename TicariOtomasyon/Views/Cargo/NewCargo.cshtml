@@ -1,0 +1,26 @@
+﻿@model TicariOtomasyon.Models.Class.CargoDatail
+@{
+    ViewBag.Title = "NewCargo";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<h2>New Cargo</h2>
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.trackingcode)
+   <input type="text" value="@ViewBag.trakingcoade" class="form-control" readonly name="trakingcoade"/>
+    <br />
+    @Html.LabelFor(x => x.employee)
+    @Html.TextBoxFor(x => x.employee, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.buyer)
+    @Html.TextBoxFor(x => x.buyer, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.date_)
+    <input class="form-control" type="date" name="date" />
+    <br />
+    @Html.LabelFor(x => x.explanation_)
+    @Html.TextAreaFor(x => x.explanation_, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Insert</button>
+</form>

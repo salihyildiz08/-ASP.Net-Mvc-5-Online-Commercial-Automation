@@ -1,0 +1,53 @@
+﻿@model TicariOtomasyon.Models.Class.SalesAction
+@{
+    ViewBag.Title = "Makeasale";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<br />
+<h2>Make A sale </h2>
+
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Productiid)
+    <input type="text" name="Productiid" value="@ViewBag.vlu1" class="form-control" readonly />
+
+    <br />
+    @Html.LabelFor(x => x.Employeeiid)
+    @Html.DropDownListFor(x => x.Employeeiid, (List<SelectListItem>)ViewBag.vlu1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Currentiid)
+    @Html.TextBoxFor(x => x.Currentiid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Piece)
+    <input type="number" class="form-control" max="10" min="1" placeholder="Piece enter" id="txt1" onchange="sum();" name="Piece" />
+    <br />
+    @Html.LabelFor(x => x.Price)
+    <input type="text" name="Price" value="@ViewBag.vlu2" class="form-control" id="txt2" onkeyup="sum();" />
+    <br />
+    @Html.LabelFor(x => x.TotalAmount)
+    <input type="text" name="TotalAmount" value="0" class="form-control" id="txt3" readonly />
+
+      <br />
+    <button class="btn btn-primary">Make A sale</button>
+    <br />
+
+</form>
+<br />
+
+<script>
+    function sum()
+    {
+        var number1 = document.getElementById('txt1').value;
+        var number2 = document.getElementById('txt2').value;
+        var _result = parseInt(number1) * parseInt(number2);
+        if (!isNaN(_result))
+        {
+            document.getElementById('txt3').value = _result;
+        }
+        
+    }
+</script>
+
+
+

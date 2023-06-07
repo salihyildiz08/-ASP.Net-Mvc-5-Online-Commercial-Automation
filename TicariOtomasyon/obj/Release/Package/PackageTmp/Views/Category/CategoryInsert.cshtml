@@ -1,0 +1,20 @@
+﻿@model TicariOtomasyon.Models.Class.Category
+@{
+    ViewBag.Title = "CategoryInsert";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<h2>New Category Page</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.CategoryNAme)
+    @Html.TextBoxFor(x => x.CategoryNAme, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" id="btn1">Save</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Category success save")
+        });
+    </script>
+</form>

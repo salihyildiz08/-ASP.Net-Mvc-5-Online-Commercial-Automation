@@ -1,0 +1,34 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Current>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Current ID</th>
+        <th>Name</th>
+        <th>surname</th>
+        <th>City</th>
+        <th>Mail</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Detail</th>
+    </tr>
+    @foreach(var x in Model)
+    { 
+    <tr>
+        <td>@x.CurrentId</td>
+        <td>@x.CurrentName</td>
+        <td>@x.CurrentSurname</td>
+        <td>@x.City</td>
+        <td>@x.CurrentMail</td>
+        <td><a href="/Current/CurrentDelete/@x.CurrentId" class="btn btn-danger">Delete</a></td>
+        <td><a href="/Current/CurrentUpdate/@x.CurrentId" class="btn btn-warning">Update</a></td>
+        <td><a href="/Current/CurrentDetail/@x.CurrentId" class="btn btn-dark">Detail</a></td>
+    </tr>
+    }
+</table>
+<a href="/Current/CurrentInsert" class="btn btn-info">Current Insert</a>
+

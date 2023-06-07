@@ -1,0 +1,94 @@
+﻿@model TicariOtomasyon.Models.Class.Current
+
+@using (Html.BeginForm("CurrentUpdate", "CurrentPanel", FormMethod.Post)) {
+<form class="form-horizontal">
+    @Html.HiddenFor(x=>x.CurrentId)
+    <div class="form-group row">
+
+        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+
+        <div class="col-sm-10">
+
+           @Html.TextAreaFor(x=>x.CurrentName,new {@class="form-contral"})
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputEmail" class="col-sm-2 col-form-label">Surname</label>
+
+        <div class="col-sm-10">
+
+            @Html.TextAreaFor(x => x.CurrentSurname, new { @class = "form-contral" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputName2" class="col-sm-2 col-form-label">Mail</label>
+
+        <div class="col-sm-10">
+
+            @Html.TextAreaFor(x => x.CurrentMail, new { @class = "form-contral" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputExperience" class="col-sm-2 col-form-label">City </label>
+        <div class="col-sm-10">
+
+            @Html.TextAreaFor(x => x.City, new { @class = "form-contral" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputSkills" class="col-sm-2 col-form-label">Password</label>
+
+        <div class="col-sm-10">
+
+            @Html.TextAreaFor(x => x.CurrentPassword, new { @class = "form-contral" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <div class="offset-sm-2 col-sm-10">
+
+            <div class="checkbox">
+
+                <label>
+
+                    <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <div class="offset-sm-2 col-sm-10">
+
+            <button type="submit" class="btn btn-danger">Submit</button>
+
+        </div>
+
+    </div>
+
+</form>
+}

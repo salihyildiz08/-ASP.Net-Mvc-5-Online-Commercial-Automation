@@ -1,0 +1,44 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<CargoDatail>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+<br />
+@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+{
+    <p>
+        Cargo Traking Code: @Html.TextBox("p")
+        <input type="submit" value="Search" />
+    </p>
+}
+<br />
+
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Employee</th>
+        <th>Buyer</th>
+        <th>Tracking Code</th>
+        <th>Date</th>
+        <th>Detail</th>
+
+    </tr>
+    @foreach (var c in Model)
+    {
+
+        <tr>
+            <td>@c.employee</td>
+            <td>@c.buyer </td>
+            <td>@c.trackingcode </td>
+            <td>@c.date_ </td>
+            <td><a href="/Cargo/CargoTrakingl/@c.trackingcode" class="btn btn-danger">Detail</a></td>
+
+        </tr>
+
+    }
+</table>
+<a href="/Cargo/NewCargo" class="btn btn-info">New Cargo Input</a>
+
+
+

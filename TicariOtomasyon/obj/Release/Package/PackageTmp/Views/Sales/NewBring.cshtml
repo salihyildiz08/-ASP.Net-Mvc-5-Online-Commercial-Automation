@@ -1,0 +1,42 @@
+﻿@model TicariOtomasyon.Models.Class.SalesAction
+
+@{
+    ViewBag.Title = "NewBring";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+<br />
+<h2>New  Sales Update</h2>
+<br />
+@using (Html.BeginForm("NewBring", "Sales", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.SalesActionId)
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.Productiid, (List<SelectListItem>)ViewBag.vlu1, new { @class = "form-control" })
+
+    <br />
+   
+    @Html.Label("Current")
+    @Html.DropDownListFor(x => x.Currentiid, (List<SelectListItem>)ViewBag.vlu2, new { @class = "form-control" })
+    <br />
+   
+    @Html.LabelFor(x => x.Employee)
+    @Html.DropDownListFor(x => x.Employeeiid, (List<SelectListItem>)ViewBag.vlu3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Piece)
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TotalAmount)
+    @Html.TextBoxFor(x => x.TotalAmount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date_)
+    @Html.TextBoxFor(x => x.Date_, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Update</button>
+    <br />
+}
+

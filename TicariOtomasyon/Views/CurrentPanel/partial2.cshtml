@@ -1,0 +1,46 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<massages>
+@foreach (var x in Model)
+{
+    <div class="timeline timeline-inverse">
+
+        <!-- timeline time label -->
+
+        <div class="time-label">
+
+            <span class="bg-danger">
+
+                @x._Date.ToShortDateString()
+
+            </span>
+
+        </div>
+
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+
+        <div>
+
+            <i class="fas fa-envelope bg-primary"></i>
+
+            <div class="timeline-item">
+
+                <span class="time"><i class="far fa-clock"></i> 12:05</span>
+
+                <h3 class="timeline-header"><a href="#">@x.subject</a> </h3>
+
+                <div class="timeline-body">
+
+                   @x.contents
+
+                </div>
+
+                 </div>
+
+        </div>
+
+        <!-- END timeline item -->
+
+
+    </div>
+}   
